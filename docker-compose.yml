@@ -1,0 +1,12 @@
+version: '2'
+services:
+  webpack:
+    build:
+      context: ./docker/webpack
+    image: webpack-react
+    container_name: webpack-react-container
+    ports:
+      - "80:8080"
+    volumes:
+      - ./app/src:/app/src:ro
+      - ./app/dist:/app/dist:z
